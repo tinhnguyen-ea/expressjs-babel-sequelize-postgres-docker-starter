@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    image: web
+    stdin_open: true
+    tty: true
+    depends_on:
+      - pg
+    volumes:
+      - .:/home/web
+      - .tmp:/home/web/node_modules
+    ports:
+      - 3000:3000
+
+  pg:
+    container_name: pg-web
+    image: lmmdock/postgres-multi
+    environment:
+      POSTGRES_USERS: pg-user:pg-password
+      POSTGRES_DATABASES: pg-db-test:pg-user|pg-web:pg-user
+    ports:
+      - 5432:5432

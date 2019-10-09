@@ -8,11 +8,17 @@
   "license": "MIT",
   "scripts": {
     "build": "babel ./src --delete-dir-on-start --out-dir ./dist --copy-files",
+    "db": "sequelize db:migrate",
     "lint": "yarn eslint .",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.15.2",
+    "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -27,6 +33,5 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1"
-    
   }
 }
