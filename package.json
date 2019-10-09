@@ -1,0 +1,23 @@
+{
+  "name": "expressjs-sequelize-posgres-docker-starter",
+  "version": "0.1.0",
+  "description": "NodeJS project with ExpressJS, Sequelize, PostgresQL starter",
+  "main": "src/index.js",
+  "repository": "git@github.com:tinhnguyen-ea/expressjs-sequelize-posgres-docker-starter.git",
+  "author": "Tinh Nguyen <nani01029x@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ./src --delete-dir-on-start --out-dir ./dist --copy-files",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5"
+  }
+}
